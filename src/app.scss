@@ -1,0 +1,71 @@
+@use "../base" as *;
+
+.app{
+    @include flex();
+    padding: 20px;
+
+    .slider{
+        @include flex($fd: row);
+        width: 100%;
+        overflow: hidden;
+
+        .genArr{
+            padding: 10px;
+            background: #fff;
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:active{
+                background: rgb(227, 227, 227);
+            }
+        }
+
+         .progress{
+             width: 100%;
+             background: #2a9df4;
+             height: 5px;
+             transform: translateX(-100%);
+             transition: all 0.1s ease-in-out;
+         }
+         
+         button{
+             z-index: 99;
+         }
+    }
+
+    .numbers{
+        @include flex($fd: row, $ai: flex-end);
+        max-width: 100%;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+
+    .actions{
+        @include flex($fd: row);
+        flex-wrap: wrap;
+
+        select{
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .genArr{
+            padding: 10px;
+            background: #fff;
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover{
+                background-color: rgba(128, 128, 128, 0.14);
+            }
+
+            &:active{
+                background: rgb(227, 227, 227);
+            }
+        }
+    }
+}
